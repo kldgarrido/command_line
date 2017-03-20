@@ -1,0 +1,8 @@
+
+Steps:
+
+1. Create model Quiz. *
+2. Create Util class for read the file
+3. Create DAO(Data Acces Object) Class to map the model model from the file.
+4. Create Core class for implement the game logic
+5. Create the UI.
