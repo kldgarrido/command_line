@@ -35,7 +35,8 @@ class Core
 		end
 	end
 
-	
+
+	private
 	def load_quiz_list
 		quiz_list = create_quiz_list(read_file('quiz.txt'))
 	end
