@@ -15,9 +15,9 @@ class Core
 
 	def next_question
 		if @index < @total_questions 
-			[@quizz_list[@index].question, @quizz_list[@index].options]
+			@quizz_list[@index].question
 		else
-			[]
+			""
 		end
 	end
 
@@ -26,7 +26,7 @@ class Core
 	end
 
 
-	def test_question(answer)
+	def evaluate_question(answer)
 		if answer == @quizz_list[@index].answer
 			@index+=1
 			return true

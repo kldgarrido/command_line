@@ -5,7 +5,7 @@ require "test/unit"
 class TestCore < Test::Unit::TestCase
 
 	def test_next_question
-		exp_result = ['Cuanto es 3x2?', ['4', '7', '6', '3', '0']]
+		exp_result = 'Cuanto es 3x2?'
 
 		instance = Core.new
 		result = instance.next_question
@@ -23,11 +23,11 @@ class TestCore < Test::Unit::TestCase
 	end
 
 
-	def test_test_question
+	def test_evaluate_question
 		exp_result = true
 
 		instance = Core.new
-		result = instance.test_question('3')
+		result = instance.evaluate_question('6')
 		
 		assert_equal(exp_result, result)
 	end

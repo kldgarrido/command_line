@@ -1,33 +1,31 @@
 require_relative 'core'
 
-def main
+def execute
 	core = Core.new
-	i = 1
+	
 	while !core.is_complete?
-		quiz = core.next_question
-		output_question(quiz[0], quiz[1], i)
+		question = core.next_question
+		output_question(question)
 		
-		result_test = core.test_question(input_answer)
+		result_test = core.evaluate_question(input_answer)
 		complete = core.is_complete?
 
 		test(result_test, complete)
-
-		i += 1
 	end
 end
 
 
-def output_question(question, options, i)
+def output_question(question)
 	system "clear" or system "cls"
-	puts "Question #{i}: #{question}"
-	i = 0
-	while i< options.length
-		option = options[i]
-		puts "#{i+1}-) #{option}"
-		i += 1
-	end
-	puts "--------"
-	puts "Select the best item, write the number."
+
+	puts "Bienvenido a reto 5."
+	puts "Para jugar, solo ingresa el termino correcto para"
+	puts "cada una de las definiciones, Listo? Vamos!"
+	puts ""
+	puts "Definición"
+	puts question
+	
+	print "Adivininar: "
 end
 
 def input_answer
@@ -35,24 +33,18 @@ def input_answer
 end
 
 def test(result_test, complete)
+	puts ""
 	if  result_test && !complete
-			puts ""
-			puts "Congratulation!. You go to the next level"
+			puts "It's Correct!. You go to the next level"
 			puts "--------"
-			puts "Press enter to continue."
-			gets.chomp
 	elsif result_test == false
-			puts "You lost. Game finish"
-			return
+			puts "You wrong. Try again"
 	else
-			puts ""
-			puts "*********************************************"
-			puts "* Congratulation!. You go to the next level *"
-			puts "*********************************************"
-			return
+			puts "*************************************"
+			puts "* Congratulation!. You won the Game *"
+			puts "*************************************"
 	end
+	puts "Presione una tecla para continuar"
+	gets.chomp
 end
 
-
-
-main

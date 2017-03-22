@@ -14,7 +14,6 @@ def create_quiz(line)
 	fields = line.split(',')
 	question = fields[0].strip
 	answer = fields[1].strip
-	options = fields[2..-1]
-	Quizz.new(question, answer, options)
+	Quizz.new(question, answer)
 end
 
