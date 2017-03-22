@@ -1,5 +1,5 @@
 require_relative 'core'
-require_relative "Model"
+require_relative "model"
 require "test/unit"
 
 class TestCore < Test::Unit::TestCase

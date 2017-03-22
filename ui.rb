@@ -10,7 +10,7 @@ def execute
 		result_test = core.evaluate_question(input_answer)
 		complete = core.is_complete?
 
-		test(result_test, complete)
+		evaluate(result_test, complete)
 	end
 end
 
@@ -32,7 +32,7 @@ def input_answer
 	answer = gets.chomp
 end
 
-def test(result_test, complete)
+def evaluate(result_test, complete)
 	puts ""
 	if  result_test && !complete
 			puts "It's Correct!. You go to the next level"

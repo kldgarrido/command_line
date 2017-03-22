@@ -1,5 +1,5 @@
 require_relative 'util'
-require_relative 'quizz_dao'
+require_relative 'quiz_dao'
 
 class Core
 
@@ -7,15 +7,15 @@ class Core
 	
 
 	def initialize
-		@quizz_list = load_quizz_list
+		@quiz_list = load_quiz_list
 		@index = 0
-		@total_questions = @quizz_list.length
+		@total_questions = @quiz_list.length
 	end
 
 
 	def next_question
 		if @index < @total_questions 
-			@quizz_list[@index].question
+			@quiz_list[@index].question
 		else
 			""
 		end
@@ -27,7 +27,7 @@ class Core
 
 
 	def evaluate_question(answer)
-		if answer == @quizz_list[@index].answer
+		if answer == @quiz_list[@index].answer
 			@index+=1
 			return true
 		else
@@ -36,8 +36,8 @@ class Core
 	end
 
 	
-	def load_quizz_list
-		quizz_list = create_quiz_list(read_file2('quiz.txt'))
+	def load_quiz_list
+		quiz_list = create_quiz_list(read_file('quiz.txt'))
 	end
 
 end

@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 
-class Quizz
+class Quiz
 
 	include Comparable
 

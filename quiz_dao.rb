@@ -1,5 +1,5 @@
 
-require_relative 'Model'
+require_relative 'model'
 
 
 def create_quiz_list(lines)
@@ -14,6 +14,6 @@ def create_quiz(line)
 	fields = line.split(',')
 	question = fields[0].strip
 	answer = fields[1].strip
-	Quizz.new(question, answer)
+	Quiz.new(question, answer)
 end
 
